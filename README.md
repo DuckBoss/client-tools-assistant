@@ -19,10 +19,16 @@ A local RAG-based AI assistant to retrieve team workflows and processes informat
 - **Docling**: For the local document conversion and formatting
 - **Rich**: For the CLI user experience
 
-### 🔗 Installation
+### 🔗 Installation and Setup
 
 ```bash
 pip install -r requirements.txt
+```
+
+Create a docs folder to store your documents:
+```bash
+cd <my_repo_clone>
+mkdir ./docs/
 ```
 
 ### 🏃 Usage
