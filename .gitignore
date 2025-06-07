@@ -201,3 +201,4 @@ docs/*
 notes/*
 test-docs/*
 *.tape
+!images/demo.png

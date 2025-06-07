@@ -14,7 +14,7 @@ A local RAG-based AI assistant to retrieve team workflows and processes informat
 
 - **Ollama**: For the local LLM interface (running locally)
 - **IBM Granite-3.3:2b Model**: For the local LLM model
-- **nomic-embed-text**: For the local embedding model
+- **nomic-embed-text**: For the local embedding modelclea
 - **ChromaDB**: For the local vector database
 - **Docling**: For the local document conversion and formatting
 - **Rich**: For the CLI user experience
@@ -26,6 +26,8 @@ pip install -r requirements.txt
 ```
 
 ### 🏃 Usage
+
+![demo-image](images/demo.png)
 
 - One-shot prompting: where the prompt is provided through command-line arguments
 
