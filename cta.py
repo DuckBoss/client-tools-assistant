@@ -106,6 +106,11 @@ def convert_files(docs_location: str) -> list[list[str, str]]:
                     f"Error: cannot convert document, skipping: {doc_name} : {err}"
                 )
                 continue
+            except ValueError as err:
+                console.print(
+                    f"Error: invalid document contents, skipping: {doc_name} : {err}"
+                )
+                continue
             text = doc_cv.export_to_text()
             docs_converted.append(text)
             console.print(
@@ -126,7 +131,7 @@ def embed_docs_data(converted_docs):
     collection = client.create_collection(name="docs")
     with console.status("[bold green]Generating vector embedding database..."):
         for idx, doc in enumerate(converted_docs):
-            response = ollama.embed(model="nomic-embed-text", input=doc)
+            response = ollama.embed(model=config.embed_model, input=doc)
             embeddings = response["embeddings"]
             collection.add(
                 ids=[str(idx)],
@@ -142,7 +147,7 @@ def one_shot(chroma_collection, user_prompt, stream=False):
     # retrieve the most relevant document
     data = None
     with console.status("[bold green]Creating prompt embeddings..."):
-        response = ollama.embed(model="nomic-embed-text", input=user_prompt)
+        response = ollama.embed(model=config.embed_model, input=user_prompt)
         results = chroma_collection.query(
             query_embeddings=response["embeddings"], n_results=1
         )
