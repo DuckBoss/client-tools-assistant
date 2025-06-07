@@ -200,5 +200,6 @@ docsearch-cli/*
 docs/*
 notes/*
 test-docs/*
+test.txt
 *.tape
 !images/demo.png

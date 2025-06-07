@@ -21,6 +21,7 @@
 
 ## Inspirations
 
+- **Ramalama**: I tried implementing this with a simpler solution using ramalama. However, the new RAG features are still in development and not functional.
 - **NotebookLM**: I think this is a much more refined solution, but having the ability to interface through the command-line,
 or in my ideal scenario through a slack bot, would provide a more natural in-house method of interfacing with this.
 - **Command Line Assistant (cla)**: This project inspired me to first work on a cli implementation of this idea and gave me some practical examples of how interfacing with an LLM through a cli would work.

@@ -8,6 +8,7 @@ python -m venv .venv
 2. Activate the virtual environment and install dependencies:
 ```bash
 source ./venv/bin/active
+(.venv) pip install --upgrade pip
 (.venv) pip install -r requirements.txt
 ```
 
