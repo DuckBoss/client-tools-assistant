@@ -1,0 +1,5 @@
+rich
+rich-argparse
+ollama
+chromadb
+docling
