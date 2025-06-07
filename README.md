@@ -4,12 +4,15 @@ A local RAG-based AI assistant to retrieve team workflows and processes informat
 
 ## ⚠️ Disclaimer
 
-This is a proof-of-concept. None of the code is finalized, and it will probably change a lot.
-Don't expect any sort of magical working code, I'm not Linus Torvalds.
+- This **DOES NOT** contain any actual data, it only has the code to use with your own data.
+- This **DOES NOT** provide any trained or finetuned models, it is using out-of-the-box IBM Granite + Nomic Embed
+- This is a generic software, it can be used as a generic rag-based LLM. There is no company data in use.
+- This is a proof-of-concept. None of the code is finalized, and it will probably change a lot.
+- Don't expect any sort of magical working code, I'm not Linus Torvalds.
 
 ### 🚀 Primary Technologies Used
 
-- **Ollama**: For the local LLM interface
+- **Ollama**: For the local LLM interface (running locally)
 - **IBM Granite-3.3:2b Model**: For the local LLM model
 - **nomic-embed-text**: For the local embedding model
 - **ChromaDB**: For the local vector database
@@ -68,7 +71,9 @@ Options:
 - You can change the system prompt, ollama model, and the default docs directory in the `config.py` file.
 - Supported document types:
   - PDF
-  - Docx
+  - DOCX
+  - XLSX
+  - HTML
 
 ## 💡 Next Steps
 
