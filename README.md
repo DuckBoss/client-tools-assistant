@@ -14,7 +14,7 @@ A local RAG-based AI assistant to retrieve team workflows and processes informat
 
 - **Ollama**: For the local LLM interface (running locally)
 - **IBM Granite-3.3:2b Model**: For the local LLM model
-- **nomic-embed-text**: For the local embedding modelclea
+- **nomic-embed-text**: For the local embedding model
 - **ChromaDB**: For the local vector database
 - **Docling**: For the local document conversion and formatting
 - **Rich**: For the CLI user experience
