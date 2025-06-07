@@ -21,14 +21,26 @@ A local RAG-based AI assistant to retrieve team workflows and processes informat
 
 ### 🔗 Installation and Setup
 
+1. Install required dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-Create a docs folder to store your documents:
+2. Create a docs folder to store your documents:
 ```bash
 cd <my_repo_clone>
 mkdir ./docs/
+```
+
+3. Run ollama:
+```bash
+ollama serve
+```
+
+4. Pull required models:
+```bash
+ollama pull granite3.3:2b
+ollama pull nomic-embed-text:latest
 ```
 
 ### 🏃 Usage
@@ -76,7 +88,7 @@ Options:
 
 ### Misc
 
-- You can change the system prompt, ollama model, and the default docs directory in the `config.py` file.
+- You can change the system prompt, llm/embed models, and the default docs directory in the `config.py` file.
 - Supported document types:
   - PDF
   - DOCX
