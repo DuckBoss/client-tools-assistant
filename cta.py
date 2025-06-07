@@ -158,7 +158,7 @@ def one_shot(chroma_collection, user_prompt, stream=False):
     print("\n")
     if stream:
         for chunk in ollama.generate(
-            model=config.model,
+            model=config.llm_model,
             system=config.system_prompt,
             prompt=f"Using this data: {data}. Respond to this prompt: {user_prompt}",
             stream=True,
@@ -167,7 +167,7 @@ def one_shot(chroma_collection, user_prompt, stream=False):
     else:
         with console.status("[bold green]Creating prompt embeddings..."):
             resp = ollama.generate(
-                model=config.model,
+                model=config.llm_model,
                 system=config.system_prompt,
                 prompt=f"Using this data: {data}. "
                 f"Respond to this prompt: {user_prompt}",
@@ -194,7 +194,7 @@ def loop(chroma_collection, stream=False):
         # retrieve the most relevant document
         data = None
         with console.status("[bold green]Creating embeddings..."):
-            response = ollama.embed(model="nomic-embed-text", input=user_prompt)
+            response = ollama.embed(model=config.embed_model, input=user_prompt)
             results = chroma_collection.query(
                 query_embeddings=response["embeddings"], n_results=1
             )
@@ -205,7 +205,7 @@ def loop(chroma_collection, stream=False):
         print("\n")
         if stream:
             for chunk in ollama.generate(
-                model=config.model,
+                model=config.llm_model,
                 system=config.system_prompt,
                 prompt=f"Using this data: {data}. "
                 f"Respond to this prompt: {user_prompt}",
@@ -215,7 +215,7 @@ def loop(chroma_collection, stream=False):
         else:
             with console.status("[bold green]Creating embeddings..."):
                 resp = ollama.generate(
-                    model=config.model,
+                    model=config.llm_model,
                     system=config.system_prompt,
                     prompt=f"Using this data: {data}. "
                     f"Respond to this prompt: {user_prompt}",
