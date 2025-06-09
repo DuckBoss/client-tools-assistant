@@ -102,3 +102,4 @@ Options:
 - **Prompt Improvements**: This still hallucinates sometimes, improved prompt engineering may help. It's rather simple right now.
 - **Model Improvements**: There's probably a better model I could use that's within data privacy policy.
 - **Automated Document Upload**: A way to automatically hook into new/updated documents instead of manually putting documents into a folder would be helpful.
+- **Stop Generating The Vector Embeddings Every Time**: This can probably speed up a lot by storing the chromadb vector database persistently instead of regenerating it every time.
