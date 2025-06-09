@@ -13,8 +13,8 @@ A local RAG-based AI assistant to retrieve team workflows and processes informat
 ### 🚀 Primary Technologies Used
 
 - **Ollama**: For the local LLM interface (running locally)
-- **IBM Granite-3.3:2b Model**: For the local LLM model
-- **nomic-embed-text**: For the local embedding model
+- **IBM Granite-3.3:2b Model**: For the local LLM model (can be configured)
+- **nomic-embed-text**: For the local embedding model (can be configured)
 - **ChromaDB**: For the local vector database
 - **Docling**: For the local document conversion and formatting
 - **Rich**: For the CLI user experience
@@ -32,7 +32,7 @@ cd <my_repo_clone>
 mkdir ./docs/
 ```
 
-3. Run ollama:
+3. Run ollama locally:
 ```bash
 ollama serve
 ```
@@ -101,4 +101,4 @@ Options:
 - **Integrations**: A slack bot integration would make this much easier to use.
 - **Prompt Improvements**: This still hallucinates sometimes, improved prompt engineering may help. It's rather simple right now.
 - **Model Improvements**: There's probably a better model I could use that's within data privacy policy.
-- **Automated Document Upload**: A way to automatically hook into new/updated documents would be helpful.
+- **Automated Document Upload**: A way to automatically hook into new/updated documents instead of manually putting documents into a folder would be helpful.
